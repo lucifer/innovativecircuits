@@ -12,27 +12,29 @@
     
     <div class="antialiased text-white">
       <header class="lg:px-16 px-6 flex flex-wrap items-center lg:py-0 py-2">
-<div class="flex justify-between items-center">
-  <a href="#">
-    <img class="h-15 inline-block" src="/img/icLogo.svg" alt="" />
-    <span class="border-t-2 border-b-2 font-Inter text-xl">Innovative Circuits</span>
-  </a>
+        <div class="flex-1 flex justify-between items-center">
+          <a href="#">
+            <img class="h-15 inline-block" src="/img/icLogo.svg" alt="" />
+            <span class="border-t-2 border-b-2 font-Inter text-xl">Innovative Circuits</span>
+          </a>
+        </div>
+        
+        <label for="menu" class="pointer-cursor lg:hidden block"><svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><title>menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></label>
 
-  <button class="lg:hidden flex flex-col bg-gray-400 rounded w-10 h-10" onclick="toggleNav()">
-    <span class="w-full h-2 bg-white m-1 rounded"></span>
-    <span class="w-full h-2 bg-white m-1 rounded"></span>
-    <span class="w-full h-2 bg-white m-1 rounded"></span>
-  </button>
+        <input class="hidden" type="checkbox" id="menu" />
+        
+        <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
 
-  <nav class="hidden lg:flex lg:items-center">
-    <ul class="flex lg:space-x-4 text-white">
-      <li><a href="#" class="block py-4 px-6 hover:text-gray-400">News</a></li>
-      <li><a href="#" class="block py-4 px-6 hover:text-gray-400">Services</a></li>
-      <li><a href="#" class="block py-4 px-6 hover:text-gray-400">Investigate</a></li>
-      <li><a href="#" class="block py-4 px-6 hover:text-gray-400">Resources</a></li>
-    </ul>
-  </nav>
-</div>
+          <nav>
+            <ul class="lg:flex items-center font-Inter justify-between text-lg text-white pt-4 lg:pt-0">
+              <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="#">News</a></li>
+              <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="#">Services</a></li>
+              <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="#">Investigate</a></li>
+              <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2" href="#">Resources</a></li>
+            </ul>
+          </nav>
+                    
+        </div>
         
       </header>
     </div>
