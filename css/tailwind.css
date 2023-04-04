@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .custom-card {
+        @apply bg-[#645CBB] py-4 px-8 shadow-lg rounded-lg w-full;
+    }
+}
