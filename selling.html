@@ -43,64 +43,70 @@
 
   <body class="bg-[432A99] text-white dark:bg-black dark:text-gray-300">
     <div class="">
-      <nav class="flex flex-wrap items-center justify-between p-6">
-        <div class="mr-6 flex flex-shrink-0 items-center">
-          <a href="index.html">
-            <img class="h-15 inline-block" src="img/icLogo.svg" alt="" />
-            <span
-              class="ml-4 border-b-2 border-t-2 font-Inter text-xl tracking-tight"
-              >Innovative Circuits</span
+        <nav class="flex flex-wrap items-center justify-between p-6">
+            <div class="mr-6 flex flex-shrink-0 items-center">
+              <a href="index.html">
+                <img class="h-15 inline-block" src="img/icLogo.svg" alt="" />
+                <span
+                  class="ml-4 border-b-2 border-t-2 font-Inter text-xl tracking-tight"
+                  >Innovative Circuits</span
+                >
+              </a>
+            </div>
+            <div class="block lg:hidden">
+              <button
+                onclick="toggleNav()"
+                class="hover flex items-center rounded border border-white px-3 py-2 hover:border-white"
+              >
+                <svg
+                  class="h-3 w-3 fill-current"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Menu</title>
+                  <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+              </button>
+            </div>
+            <div
+              id="menu"
+              class="hidden w-full flex-grow lg:flex lg:w-auto lg:items-center"
             >
-          </a>
-        </div>
-        <div class="block lg:hidden">
-          <button
-            onclick="toggleNav()"
-            class="hover flex items-center rounded border border-white px-3 py-2 hover:border-white"
-          >
-            <svg
-              class="h-3 w-3 fill-current"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
-        </div>
-        <div
-          id="menu"
-          class="hidden w-full flex-grow lg:flex lg:w-auto lg:items-center"
-        >
-          <div class="text-2xl lg:flex lg:flex-grow lg:justify-end">
-            <a
-              href="index.html"
-              class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
-            >
-              Home
-            </a>
-            <a
-              href="news.html"
-              class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
-            >
-              News
-            </a>
-            <a
-              href="services.html"
-              class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
-            >
-              Services
-            </a>
-
-            <a
-              href="contact.html"
-              class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
-            >
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
+              <div class="text-2xl lg:flex lg:flex-grow lg:justify-end">
+                <a
+                  href="index.html"
+                  class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
+                >
+                  Home
+                </a>
+                <a
+                  href="news.html"
+                  class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
+                >
+                  News
+                </a>
+                <a
+                  href="services.html"
+                  class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
+                >
+                  Services
+                </a>
+                <a
+                  href="forSale.html"
+                  class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
+                >
+                  For Sale
+                </a>
+    
+                <a
+                  href="contact.html"
+                  class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
+                >
+                  Contact
+                </a>
+              </div>
+            </div>
+          </nav>
 
       <div class="container h-auto w-full rounded-3xl bg-[432A99] p-8 max-w-6xl mx-auto">
         <iframe class="airtable-embed" src="https://airtable.com/embed/shr31kqotMBJZeOPW?backgroundColor=purple" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
