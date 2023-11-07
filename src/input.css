@@ -6,16 +6,16 @@
 
 @layer components {
   .custom-card {
-    @apply bg-[#A0522D] py-4 px-8 shadow-lg rounded-lg w-full;
+    @apply bg-[#4094b8] py-4 px-8 shadow-lg rounded-lg w-full;
   }
   .autumn-gradient {
     /* background: linear-gradient(to bottom, #d19a66, #8b4513); */
     background: linear-gradient(
         to bottom,
-        rgba(209, 154, 102, 0.7),
-        rgba(139, 69, 19, 0.7)
+        rgba(102, 179, 209, 0.7),
+        rgba(9, 112, 125, 0.7)
       ),
-      url("img/olivia-hutcherson-unsplash.jpg");
+      url("img/wideWinterIC.png");
     background-size: cover;
     background-attachment: fixed;
   }
