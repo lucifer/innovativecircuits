@@ -9,7 +9,8 @@
     @apply bg-[#4094b8] py-4 px-8 shadow-lg rounded-lg w-full;
   }
   .autumn-gradient {
-    /* background: linear-gradient(to bottom, #d19a66, #8b4513); */
+    /* background: linear-gradient(to bottom, #d19a66, #8b4513)
+    Spring: 9C9285 828474 677769 4D6963 39595F 2F4858 , 0.7; */
     background: linear-gradient(
         to bottom,
         rgba(156, 146, 133, 0.7),
