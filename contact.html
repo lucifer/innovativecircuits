@@ -193,80 +193,94 @@
         </div>
       </header>
 
-      <div class="container mx-auto mt-6 px-4 sm:px-6 lg:px-8">
-        <h2 class="mt-4 text-center font-Inter text-3xl font-bold">
-          Electronics Engineering Professionals
-        </h2>
-      </div>
-
-      <div class="container mx-auto mt-20 max-w-3xl px-4 sm:px-6 lg:px-8">
-        <div
-          class="grid grid-cols-1 gap-16 text-center sm:grid-cols-1 md:grid-cols-1 md:gap-2 border"
-        >
-          <!-- Card 1 -->
-          <div class="custom-card">
-            <div class="-mt-16 flex justify-center md:justify-center">
-              <div class="h-24 w-24 rounded-full bg-[#1f6e7c] flex items-center justify-center" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="h-12 w-12">
-                  <path d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"/>
-                </svg>
-              </div>
+      <div class="container mx-auto mt-12 max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div class="custom-card">
+          <div class="-mt-16 flex justify-center">
+            <div class="h-24 w-24 rounded-full bg-[#1f6e7c] flex items-center justify-center" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="h-12 w-12">
+                <path d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"/>
+              </svg>
             </div>
-            <h1 class="text-3xl font-semibold">Contact us</h1>
+          </div>
 
-            <p>
-              At Innovative Circuits, we take pride in our exceptional customer
-              service. If you have a question or comment, please feel free to
-              contact us.
-            </p>
-            <p>Office hours: Mon-Fri 9:00am -6:00pm</p>
-            <p>Saturday and Sunday <span class="font-bold">BY APPOINTMENT ONLY.</span></p>
-            <br />
-            <ul class="text-4xl">
-              <li><a href="tel:705-791-6634">Call us 705-791-6634</a></li>
-              <br>
-              <li><a href="mailto:service@innovativecircuits.com?subject=Service Enquiry from Contact page">service@innovativecircuits.com</a></li>
-              <li><a href="mailto:ron@innovativecircuits.com?subject=Message to Ron from Contact page">ron@innovativecircuits.com</a></li>
+          <h1 class="text-center font-Outfit text-3xl md:text-4xl font-semibold mt-2">Contact Innovative Circuits</h1>
+          <p class="mt-4 text-center font-Inter">
+            The quickest way to reach us is by phone.
+          </p>
+
+          <!-- Phone block — primary action -->
+          <div class="mt-6 text-center">
+            <a
+              href="tel:705-791-6634"
+              class="inline-block font-Outfit text-4xl md:text-5xl font-semibold tracking-tight underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded"
+            >
+              705-791-6634
+            </a>
+            <p class="mt-3 font-Inter text-lg">Mon–Fri 9:00 am – 6:00 pm</p>
+            <p class="font-Inter">Saturday &amp; Sunday <span class="font-bold">by appointment only</span></p>
+          </div>
+
+          <!-- Email block -->
+          <div class="mt-8 border-t border-white/30 pt-6 text-center font-Inter">
+            <p class="font-semibold uppercase tracking-wide text-sm text-white/80">Email</p>
+            <ul class="mt-3 space-y-4 text-xl md:text-2xl">
+              <li>
+                <span class="block text-xs uppercase tracking-wide text-white/70">General inquiries</span>
+                <a
+                  href="mailto:service@innovativecircuits.com?subject=Service Enquiry from Contact page"
+                  class="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded"
+                >service@innovativecircuits.com</a>
+              </li>
+              <li>
+                <span class="block text-xs uppercase tracking-wide text-white/70">Direct to Ron</span>
+                <a
+                  href="mailto:ron@innovativecircuits.com?subject=Message to Ron from Contact page"
+                  class="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded"
+                >ron@innovativecircuits.com</a>
+              </li>
             </ul>
+          </div>
+
+          <!-- Address block -->
+          <div class="mt-8 border-t border-white/30 pt-6 text-center font-Inter">
+            <p class="font-semibold uppercase tracking-wide text-sm text-white/80">Address</p>
+            <p class="mt-3 text-lg">
+              #2040 30/31 Side Road West<br />
+              Oro-Medonte, Ontario L0L 2L0
+            </p>
+            <p class="mt-4">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=2040+30%2F31+Side+Road+West+Oro-Medonte+ON+L0L+2L0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded"
+              >Get directions on Google Maps →</a>
+            </p>
           </div>
         </div>
       </div>
-            <div class="container mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-8">
-      
-              <div
-              class="mt-6 h-auto w-full rounded-lg bg-cyan-800/30 border border-cyan-300 p-6"
-            >
-              <p class="text-balance font-Inter text-lg font-bold md:text-2xl">
-                Established in 1991, we bring over three decades of expertise to the
-                Electronics Industry in Barrie, Ontario.
-                <br />
-                We service Industrial Equipment, PLC’s and machine controllers as
-                well as expensive to replace controller boards for Hot Tubs,
-                Welders, Commercial Printers Etc.. All done at component level.
-                <br />
-                If you have a board that needs work, it likely can be repaired.
-                <br />
-                And yes, we are one of the only businesses left in Ontario that can
-                service Amateur Radio and equipment from all the major
-                manufacturers.
-                <br />
-                Don’t throw it out. Call us first.
-              </p>
-            </div>
+      <div class="container mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mt-6 h-auto w-full rounded-2xl bg-cyan-800/30 border border-cyan-300 p-6">
+          <p class="text-balance font-Inter text-lg font-bold md:text-2xl">
+            Established in 1991, we bring over three decades of expertise to the
+            Electronics Industry in Barrie, Ontario.
+            <br />
+            We service Industrial Equipment, PLC’s and machine controllers as
+            well as expensive to replace controller boards for Hot Tubs,
+            Welders, Commercial Printers Etc.. All done at component level.
+            <br />
+            If you have a board that needs work, it likely can be repaired.
+            <br />
+            And yes, we are one of the only businesses left in Ontario that can
+            service Amateur Radio and equipment from all the major
+            manufacturers.
+            <br />
+            Don’t throw it out. Call us first.
+          </p>
+        </div>
+      </div>
 
-            <div class="mx-auto mt-6 px-4 sm:px-6 lg:px-8">
-              <div class="mt-8 flex justify-center items-center">
-                <div
-                  class="h-auto w-full rounded-3xl bg-cyan-800/30 p-8 border border-white"
-                >
-                  <p class="text-center font-Outfit text-3xl tracking-wide">
-                    Expert repair assessments at a fair price
-                  </p>
-                </div>
-              </div>
-            </div>
-
-      <div class="mx-auto mt-6 px-4 sm:px-6 lg:px-8">
+      <div class="container mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-8">
         <footer class="mt-6 rounded-2xl bg-black/30 py-8">
           <div class="mx-auto">
             <div class="mb-2 p-4 dark:brightness-75">
@@ -283,6 +297,7 @@
             </div>
           </div>
         </footer>
+      </div>
     </div>
 
     <script>
