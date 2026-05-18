@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "img/items"
+public_folder: "/img/items"
+
+publish_mode: simple
+
+site_url: https://innovativecircuits.com
+display_url: https://innovativecircuits.com
+logo_url: https://innovativecircuits.com/img/innovativeLogo.svg
+
+collections:
+  - name: "items"
+    label: "For Sale Items"
+    label_singular: "Item"
+    folder: "data/items"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{title}} — {{status}}"
+    sortable_fields: ["datePosted", "title", "status"]
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "description", label: "Description", widget: "text" }
+      - { name: "image", label: "Image", widget: "image", required: false, hint: "Upload a photo of the item (optional)" }
+      - { name: "price", label: "Price", widget: "string", required: false, hint: "Leave blank for 'Contact for price'" }
+      - name: "status"
+        label: "Status"
+        widget: "select"
+        options: ["For Sale", "Sold", "Hidden"]
+        default: "For Sale"
+        hint: "Hidden items don't appear on the public page. Sold items show with a badge."
+      - { name: "enquireEmail", label: "Enquire email", widget: "string", default: "ron@innovativecircuits.com" }
+      - name: "datePosted"
+        label: "Date posted"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        picker_utc: false
+        default: ""
