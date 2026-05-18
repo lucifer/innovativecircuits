@@ -5,7 +5,17 @@
 
 @layer components {
   .custom-card {
-    @apply bg-[#4094b8] py-4 px-8 shadow-lg rounded-lg w-full;
+    @apply bg-brand-primary py-4 px-8 shadow-lg rounded-2xl w-full;
+  }
+
+  /* Primary CTA — solid brand cyan, white text, pill shape. */
+  .btn-primary {
+    @apply inline-block bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold py-3 px-6 rounded-full text-2xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+  }
+
+  /* Secondary CTA — outline, transparent fill. */
+  .btn-ghost {
+    @apply inline-block bg-transparent hover:bg-white/10 text-white font-semibold py-3 px-6 rounded-full text-2xl border border-white/70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
   }
 
   /* Seasonal background — driven by <html data-season="..."> set pre-paint by
