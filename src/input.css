@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Outfit:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@500;600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,16 +7,49 @@
   .custom-card {
     @apply bg-[#4094b8] py-4 px-8 shadow-lg rounded-lg w-full;
   }
-  .autumn-gradient {
-    /* background: linear-gradient(to bottom, #d19a66, #8b4513)
-    Spring: 9C9285 828474 677769 4D6963 39595F 2F4858 , 0.7; */
-    background: linear-gradient(
-        to bottom,
-        rgba(156, 146, 133, 0.7),
-        rgba(47, 72, 88, 0.7)
-      ),
-      url("img/wideSpringIC.webp");
+
+  /* Seasonal background — driven by <html data-season="..."> set pre-paint by
+     the inline script in each page's <head>. CSS-only fallback below uses
+     spring values when no data-season is present (e.g. JS disabled). */
+  :root,
+  :root[data-season="spring"] {
+    --bg-image: url("img/wideSpringIC.webp");
+    --grad-top: rgba(156, 146, 133, 0.7);
+    --grad-bot: rgba(47, 72, 88, 0.7);
+  }
+  :root[data-season="summer"] {
+    --bg-image: url("img/wideSpringIC.webp");
+    --grad-top: rgba(80, 140, 110, 0.55);
+    --grad-bot: rgba(20, 60, 80, 0.75);
+  }
+  :root[data-season="autumn"] {
+    --bg-image: url("img/wideSpringIC.webp");
+    --grad-top: rgba(180, 100, 50, 0.65);
+    --grad-bot: rgba(70, 40, 30, 0.75);
+  }
+  :root[data-season="winter"] {
+    --bg-image: url("img/wideSpringIC.webp");
+    --grad-top: rgba(110, 130, 150, 0.55);
+    --grad-bot: rgba(30, 45, 75, 0.78);
+  }
+
+  /* To unlock per-season photos: drop files at img/seasonal/{spring,summer,autumn,winter}.webp
+     and point each --bg-image at the matching file (1920×1080, ≤150KB WebP).
+     Until then, all four seasons share wideSpringIC.webp and differ only by
+     gradient overlay. */
+
+  .seasonal-bg {
+    background:
+      linear-gradient(to bottom, var(--grad-top), var(--grad-bot)),
+      var(--bg-image);
     background-size: cover;
     background-attachment: fixed;
+  }
+
+  /* Fixed-attachment is janky on iOS Safari — switch to scroll on mobile. */
+  @media (max-width: 768px) {
+    .seasonal-bg {
+      background-attachment: scroll;
+    }
   }
 }

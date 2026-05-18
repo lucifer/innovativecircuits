@@ -3,19 +3,97 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="output.css" />
-    <title>Innovative Circuits</title>
-    <script src="https://kit.fontawesome.com/c084bce360.js" crossorigin="anonymous"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+
+    <title>Electronics Repair Services in Barrie | Innovative Circuits</title>
+    <meta name="description" content="Repair, design, and install: industrial controllers, PLCs, HF amplifiers, amateur radio, custom PCB assembly, video surveillance, and networking. Serving Barrie and Simcoe County since 1991." />
+    <link rel="canonical" href="https://innovativecircuits.com/services.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Innovative Circuits" />
+    <meta property="og:locale" content="en_CA" />
+    <meta property="og:url" content="https://innovativecircuits.com/services.html" />
+    <meta property="og:title" content="Electronics Repair Services in Barrie | Innovative Circuits" />
+    <meta property="og:description" content="Industrial controllers, PLCs, amateur radio, custom PCB assembly, surveillance — serving Barrie and Simcoe County since 1991." />
+    <meta property="og:image" content="https://innovativecircuits.com/img/SpringIC.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://innovativecircuits.com/services.html" />
+    <meta name="twitter:title" content="Electronics Repair Services in Barrie | Innovative Circuits" />
+    <meta name="twitter:description" content="Industrial controllers, PLCs, amateur radio, custom PCB assembly, surveillance — serving Barrie and Simcoe County since 1991." />
+    <meta name="twitter:image" content="https://innovativecircuits.com/img/SpringIC.jpg" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#432A99" />
-    <meta name="msapplication-TileColor" content="#603cba" />
-    <meta name="theme-color" content="#ffffff" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4094b8" />
+    <meta name="theme-color" content="#4094b8" />
+
+    <script>
+      (function () {
+        var qs = new URLSearchParams(location.search).get("season");
+        var seasons = ["spring", "summer", "autumn", "winter"];
+        if (qs && seasons.indexOf(qs) !== -1) {
+          document.documentElement.dataset.season = qs;
+          return;
+        }
+        var m = new Date().getMonth();
+        document.documentElement.dataset.season =
+          m === 11 || m < 2 ? "winter" : m < 5 ? "spring" : m < 8 ? "summer" : "autumn";
+      })();
+    </script>
+
+    <link rel="stylesheet" href="output.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ElectronicsStore",
+      "name": "Innovative Circuits",
+      "alternateName": "Innovative Circuits Electronics Repair Centre",
+      "image": "https://innovativecircuits.com/img/innovativeLogo.svg",
+      "logo": "https://innovativecircuits.com/img/innovativeLogo.svg",
+      "url": "https://innovativecircuits.com/",
+      "telephone": "+1-705-791-6634",
+      "email": "service@innovativecircuits.com",
+      "priceRange": "$$",
+      "foundingDate": "1991",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#2040 30/31 Side Road West",
+        "addressLocality": "Oro-Medonte",
+        "addressRegion": "ON",
+        "postalCode": "L0L 2L0",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.5854,
+        "longitude": -79.5556
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Barrie"},
+        {"@type": "AdministrativeArea", "name": "Simcoe County"},
+        {"@type": "AdministrativeArea", "name": "Ontario"}
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday","Sunday"],
+          "description": "By appointment only"
+        }
+      ]
+    }
+    </script>
   </head>
 
-  <body class="autumn-gradient dark:bg-black text-[#FDF6E4] dark:text-gray-300">
+  <body class="seasonal-bg dark:bg-black text-[#FDF6E4] dark:text-gray-300">
     <div class="container mx-auto mt-6 px-4 sm:px-6 lg:px-8">
       <nav class="flex flex-wrap items-center justify-between p-6">
         <div class="mr-6 flex flex-shrink-0 items-center">
@@ -47,7 +125,7 @@
           <div class="bore rounded-lg bg-white/20 backdrop-blur-lg border border-white">
             <div class="p-8 text-center md:flex md:text-left">
               <div class="md:w-1/2">
-                <h2 class="font-Outfit text-3xl md:text-4xl lg:text-5xl">We fix what the other guys can’t.</h2>
+                <h1 class="font-Outfit text-3xl md:text-4xl lg:text-5xl">We fix what the other guys can’t.</h1>
                 <div class="pt-4 font-Inter">
                   <p>One of the only companies in Barrie that has componentry in stock when you need it.</p>
                 </div>
@@ -72,7 +150,7 @@
           <!-- Card 1 -->
           <div class="custom-card">
             <div class="flex justify-center md:justify-center -mt-16">
-              <img src="img/CCTVVector.svg" alt="Image of a CCTV camera" class="w-24 h-24 object-contain p-1 rounded-full bg-[#1f6e7c]" />
+              <img src="img/CCTVVector.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" class="w-24 h-24 object-contain p-1 rounded-full bg-[#1f6e7c]" />
             </div>
             <h2 class="text-3xl font-semibold">Services</h2>
             <div class="flex text-justify">
@@ -166,9 +244,7 @@
       </div>
       <!-- CTA -->
       <div class="flex justify-center mt-6">
-        <a href="mailto:ron@innovativecircuits.com?subject=Get in touch message from site">
-          <button class="bg-transparent hover:bg-cyan-700 font-semibold hover:text-white text-gray-200 py-2 px-4 border border-white hover:border-white rounded text-2xl">Get in touch</button>
-        </a>
+        <a href="mailto:ron@innovativecircuits.com?subject=Get in touch message from site" class="inline-block bg-transparent hover:bg-cyan-700 font-semibold hover:text-white text-gray-200 py-2 px-4 border border-white hover:border-white rounded text-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">Get in touch</a>
       </div>
 
       <!-- L&R panels -->
@@ -190,7 +266,7 @@
         <footer class="mt-6 rounded-lg bg-white/20 backdrop-blur-lg py-8">
           <div class="container mx-auto">
             <div class="mb-2 p-4">
-              <img src="img/innovativeLogo.svg" alt="Innovative Circuits logo" />
+              <img src="img/innovativeLogo.svg" alt="Innovative Circuits logo" loading="lazy" decoding="async" />
               <p class="mt-4">Innovative Circuits, Electronics Repair Centre, #2040 30/31 Side Road West Oro-Medonte, Ontario L0L 2L0</p>
             </div>
           </div>

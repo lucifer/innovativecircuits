@@ -3,45 +3,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="output.css" />
-    <title>
-      Innovative Circuits, the electronics repair shop in Barrie with components
-      in stock when you need them.
-    </title>
-    <script
-      src="https://kit.fontawesome.com/c084bce360.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Primary Meta Tags -->
-    <title>Innovative Circuits</title>
-    <meta name="title" content="Innovative Circuits" />
-    <meta
-      name="description"
-      content="The only company in Barrie that really can fix what the others can't"
-    />
 
-    <!-- Open Graph / Facebook -->
+    <title>Surplus Electronics For Sale | Innovative Circuits</title>
+    <meta name="description" content="Surplus electronics for sale at Innovative Circuits in Oro-Medonte, Ontario." />
+    <link rel="canonical" href="https://innovativecircuits.com/forSale.html" />
+
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://innovativecircuits.com/" />
-    <meta property="og:title" content="Innovative Circuits" />
-    <meta
-      property="og:description"
-      content="The only company in Barrie that really can fix what the others can't"
-    />
-    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="Innovative Circuits" />
+    <meta property="og:locale" content="en_CA" />
+    <meta property="og:url" content="https://innovativecircuits.com/selling.html" />
+    <meta property="og:title" content="Surplus Electronics For Sale | Innovative Circuits" />
+    <meta property="og:description" content="Surplus electronics for sale at Innovative Circuits in Oro-Medonte, Ontario." />
+    <meta property="og:image" content="https://innovativecircuits.com/img/SpringIC.jpg" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://innovativecircuits.com/" />
-    <meta property="twitter:title" content="Innovative Circuits" />
-    <meta
-      property="twitter:description"
-      content="The only company in Barrie that really can fix what the others can't"
-    />
-    <meta property="twitter:image" content="" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://innovativecircuits.com/selling.html" />
+    <meta name="twitter:title" content="Surplus Electronics For Sale | Innovative Circuits" />
+    <meta name="twitter:description" content="Surplus electronics for sale at Innovative Circuits in Oro-Medonte, Ontario." />
+    <meta name="twitter:image" content="https://innovativecircuits.com/img/SpringIC.jpg" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4094b8" />
+    <meta name="theme-color" content="#4094b8" />
+
+    <script>
+      (function () {
+        var qs = new URLSearchParams(location.search).get("season");
+        var seasons = ["spring", "summer", "autumn", "winter"];
+        if (qs && seasons.indexOf(qs) !== -1) {
+          document.documentElement.dataset.season = qs;
+          return;
+        }
+        var m = new Date().getMonth();
+        document.documentElement.dataset.season =
+          m === 11 || m < 2 ? "winter" : m < 5 ? "spring" : m < 8 ? "summer" : "autumn";
+      })();
+    </script>
+
+    <link rel="stylesheet" href="output.css" />
   </head>
 
-  <body class="bg-[432A99] text-white dark:bg-black dark:text-gray-300">
+  <body class="seasonal-bg text-white dark:bg-black dark:text-gray-300">
     <div class="">
       <nav class="flex flex-wrap items-center justify-between p-6">
         <div class="mr-6 flex flex-shrink-0 items-center">
@@ -103,8 +108,13 @@
         </div>
       </nav>
 
+      <header class="mx-auto mt-6 max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h1 class="font-Outfit text-3xl md:text-4xl lg:text-5xl">Surplus electronics for sale</h1>
+        <p class="mt-2 font-Inter">Components, test equipment, and gear we've come across over the years. Updated periodically — message us to confirm availability.</p>
+      </header>
+
       <div
-        class="container h-auto w-full rounded-3xl bg-[432A99] p-8 max-w-6xl mx-auto"
+        class="container h-auto w-full rounded-3xl bg-[#432A99] p-8 max-w-6xl mx-auto mt-6"
       >
         <iframe
           class="airtable-embed"
@@ -140,12 +150,9 @@
         <div class="flex justify-center mt-6">
           <a
             href="mailto:ron@innovativecircuits.com?subject=Get in touch message from site"
+            class="inline-block bg-transparent hover:bg-[#645CBB] font-semibold hover:text-white text-gray-200 py-2 px-4 border border-white hover:border-transparent rounded text-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
           >
-            <button
-              class="bg-transparent hover:bg-[645CBB] font-semibold hover:text-white text-gray-200 py-2 px-4 border border-white hover:border-transparent rounded text-2xl"
-            >
-              Get in touch
-            </button>
+            Get in touch
           </a>
         </div>
       </div>
@@ -174,6 +181,8 @@
               <img
                 src="img/innovativeLogo.svg"
                 alt="Innovative Circuits logo"
+                loading="lazy"
+                decoding="async"
               />
               <p class="mt-4">
                 Innovative Circuits, Electronics Repair Centre, #2040 30/31 Side

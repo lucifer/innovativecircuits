@@ -1,6 +1,12 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Innovative Circuits",
+    "short_name": "Innovative Circuits",
+    "description": "Electronics repair in Barrie, Ontario since 1991.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "theme_color": "#4094b8",
+    "background_color": "#fafaf9",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -12,8 +18,5 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+    ]
 }
