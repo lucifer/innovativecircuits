@@ -84,16 +84,19 @@ npm run cms:dev      # decap-server proxies CMS file ops to disk
 
 Open http://localhost:5173/admin/ — the CMS opens without auth, reads/writes `data/items/*.json` directly. Image uploads land in `img/items/`. Save in the CMS, then refresh `/forSale.html` to see the rendered card. This is the fastest way to validate the full edit-to-render loop before hitting Netlify.
 
-### One-time Netlify dashboard setup (required for production CMS)
+### Deploying to Netlify (one-time)
 
-These steps happen in the Netlify dashboard, not in code:
+The repo has a `netlify.toml` with the build command (`npm run build`), publish directory (`.`), Node version, redirects, and cache headers. Once the GitHub repo is connected to Netlify, deploys are automatic on every push to `master`.
 
-1. **Identity** → "Enable Identity"
-2. **Identity → Settings & usage → Registration preferences** → set to "Invite only"
-3. **Identity → Services → Git Gateway** → "Enable Git Gateway"
-4. **Identity → Invite users** → invite Ron's email
+1. **netlify.com → Sites → Add new site → Import from Git** → pick the `innovativecircuits` repo. Netlify reads `netlify.toml` and auto-fills build settings. Click Deploy.
+2. **Site settings → Identity → Enable Identity.**
+3. **Identity → Settings and usage → Registration preferences** → set to **Invite only** (so randoms can't self-sign-up).
+4. **Identity → Services → Git Gateway** → **Enable Git Gateway**. This is what lets Decap commit to the repo on Ron's behalf — without it, saves from `/admin/` fail.
+5. **Identity → Invite users** → invite Ron's email.
 
-Ron then receives an email, clicks the link, lands on the homepage where the Identity widget intercepts the invite token, sets a password, and is redirected to `/admin/`. From there, every save is a git commit to `master`, which triggers a Netlify rebuild.
+Ron then receives an email, clicks the link, lands on the homepage where the Identity widget (loaded on `index.html`) catches the invite token, lets him set a password, and redirects to `/admin/`. Every save he makes in the CMS commits to `master`, which triggers a Netlify rebuild (~1–2 min) and the site picks up the change.
+
+**Always use `/admin/` with the trailing slash** — Decap uses hash-based routing under the hood and the unslashed URL can break depending on how the host resolves it.
 
 ### Tailwind safelist note
 

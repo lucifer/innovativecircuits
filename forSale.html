@@ -49,22 +49,22 @@
     <!-- partial: analytics -->
 <!--
   Google Analytics (GA4).
-  TO ACTIVATE: replace the GA_ID placeholder below with the Measurement
-  ID from your Google Analytics property (looks like G-AB12CD34EF).
-  While the placeholder is in place, no analytics request fires.
-  After editing this file, run `npm run build:partials` to fan the
-  change out to every page (or just `npm run build`).
+  GA_ID below is the Measurement ID from your Google Analytics property
+  (looks like G-AB12CD34EF). Replace with the literal "DISABLED" to
+  switch analytics off without removing the partial wiring.
+  After editing this file, run `npm run build:partials` (or `npm run build`)
+  to fan the change out to every page.
 -->
 <script>
   (function () {
-    var GA_ID = "G-XXXXXXXXXX";
-    if (GA_ID === "G-XXXXXXXXXX") return;
+    var GA_ID = "G-0MGDZQPCGR";
+    if (!GA_ID || GA_ID === "DISABLED" || GA_ID.indexOf("XXXX") !== -1) return;
     var s = document.createElement("script");
     s.async = true;
     s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
     document.head.appendChild(s);
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag() { dataLayer.push(arguments); }
     gtag("js", new Date());
     gtag("config", GA_ID, { anonymize_ip: true });
   })();
