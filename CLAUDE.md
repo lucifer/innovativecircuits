@@ -19,7 +19,7 @@ There is no lint, test, or typecheck step.
 
 ## Architecture
 
-- Pages are standalone `.html` files at the repo root: `index.html`, `services.html`, `contact.html`, `forSale.html`. Navigation between them is plain `<a href="...">` — no router or template at runtime. Shared chrome (nav, footer, scripts) is kept in `partials/` and propagated into each page by `scripts/sync-partials.js`. See **Partials workflow** below.
+- Pages are standalone `.html` files at the repo root: `index.html`, `services.html`, `contact.html`, `forsale.html`. Navigation between them is plain `<a href="...">` — no router or template at runtime. Shared chrome (nav, footer, scripts) is kept in `partials/` and propagated into each page by `scripts/sync-partials.js`. See **Partials workflow** below.
 - `news.html` and `selling.html` are retired stubs (meta-refresh + noindex) kept around so old inbound links 301 cleanly. They're also covered by `_redirects` for server-side 301s on Netlify.
 - Tailwind's `content` glob in `tailwind.config.js` is `["./*.{html,js}", "./index.html", "./partials/*.html"]`. Classes used in files outside those paths won't be emitted into `output.css`. Class strings embedded in `<script>` template literals (e.g. the For Sale renderer) ARE picked up because the scanner reads the HTML file as text.
 - `src/input.css` is the Tailwind entry. It defines a `@layer components` block with the brand button classes (`.btn-primary`, `.btn-ghost`), the `.custom-card`, and the seasonal background system (see Seasonal theming below).
@@ -67,7 +67,7 @@ The For Sale page is driven by a folder collection edited through Decap CMS:
 - **Admin URL**: `/admin/` — login via Netlify Identity.
 - **Source of truth**: `data/items/*.json`, one file per item.
 - **Build step**: `scripts/build-items.js` concatenates them into `data/items.json`, sorted by `datePosted` desc. This file is gitignored — regenerated on every build.
-- **Runtime**: `forSale.html` fetches `/data/items.json` and renders cards. Items with `status: "Hidden"` are filtered out client-side; `"Sold"` items show with a badge and dimmed; `"For Sale"` items get an Enquire CTA (mailto with the item title prefilled).
+- **Runtime**: `forsale.html` fetches `/data/items.json` and renders cards. Items with `status: "Hidden"` are filtered out client-side; `"Sold"` items show with a badge and dimmed; `"For Sale"` items get an Enquire CTA (mailto with the item title prefilled).
 - **Image uploads**: Decap writes uploaded images to `img/items/`.
 
 ### Local CMS testing (no Netlify needed)
@@ -82,7 +82,7 @@ npm run dev          # Vite serves the site + admin/
 npm run cms:dev      # decap-server proxies CMS file ops to disk
 ```
 
-Open http://localhost:5173/admin/ — the CMS opens without auth, reads/writes `data/items/*.json` directly. Image uploads land in `img/items/`. Save in the CMS, then refresh `/forSale.html` to see the rendered card. This is the fastest way to validate the full edit-to-render loop before hitting Netlify.
+Open http://localhost:5173/admin/ — the CMS opens without auth, reads/writes `data/items/*.json` directly. Image uploads land in `img/items/`. Save in the CMS, then refresh `/forsale.html` to see the rendered card. This is the fastest way to validate the full edit-to-render loop before hitting Netlify.
 
 ### Deploying to Netlify (one-time)
 
@@ -100,7 +100,7 @@ Ron then receives an email, clicks the link, lands on the homepage where the Ide
 
 ### Tailwind safelist note
 
-The For Sale renderer uses some classes only inside JS template literals. A hidden `<template>` block on `forSale.html` lists them so the scanner picks them up. If you add new dynamic classes to the renderer, add them to that template block or they'll be silently purged from `output.css`.
+The For Sale renderer uses some classes only inside JS template literals. A hidden `<template>` block on `forsale.html` lists them so the scanner picks them up. If you add new dynamic classes to the renderer, add them to that template block or they'll be silently purged from `output.css`.
 
 ## Notes
 
