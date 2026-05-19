@@ -98,65 +98,38 @@
 
   <body class="seasonal-bg text-white dark:bg-black dark:text-white">
     <div class="container mx-auto mt-6 px-4 sm:px-6 lg:px-8">
-      <nav class="flex flex-wrap items-center justify-between p-6">
-        <div class="mr-6 flex flex-shrink-0 items-center">
-          <a href="index.html">
-            <img class="h-15 inline-block" src="img/icLogo.svg" alt="" />
-            <span
-              class="ml-4 border-b-2 border-t-2 font-Inter text-xl tracking-tight"
-              >Innovative Circuits</span
-            >
-          </a>
-        </div>
-        <div class="block lg:hidden">
-          <button
-            onclick="toggleNav()"
-            class="hover flex items-center rounded border border-white px-3 py-2 hover:border-white"
-          >
-            <svg
-              class="h-3 w-3 fill-current"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
-        </div>
-        <div
-          id="menu"
-          class="hidden w-full flex-grow lg:flex lg:w-auto lg:items-center"
-        >
-          <div class="text-2xl lg:flex lg:flex-grow lg:justify-end">
-            <a
-              href="index.html"
-              class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
-            >
-              Home
-            </a>
-
-            <a
-              href="services.html"
-              class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
-            >
-              Services
-            </a>
-            <a
-              href="forSale.html"
-              class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
-            >
-              For Sale
-            </a>
-
-            <a
-              href="contact.html"
-              class="hover mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block"
-            >
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
+      <!-- partial: nav -->
+<nav class="flex flex-wrap items-center justify-between p-6">
+  <div class="mr-6 flex flex-shrink-0 items-center">
+    <a href="index.html">
+      <img class="h-15 inline-block" src="img/icLogo.svg" alt="" />
+      <span class="ml-4 border-b-2 border-t-2 font-Inter text-xl tracking-tight">Innovative Circuits</span>
+    </a>
+  </div>
+  <div class="block lg:hidden">
+    <button
+      onclick="toggleNav()"
+      type="button"
+      aria-controls="menu"
+      aria-expanded="false"
+      class="flex items-center rounded border border-white px-3 py-2 hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+    >
+      <svg class="h-3 w-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <title>Menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+      </svg>
+    </button>
+  </div>
+  <div id="menu" class="hidden w-full flex-grow lg:flex lg:w-auto lg:items-center">
+    <div class="text-2xl lg:flex lg:flex-grow lg:justify-end">
+      <a href="index.html" class="mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block">Home</a>
+      <a href="services.html" class="mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block">Services</a>
+      <a href="forSale.html" class="mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block">For Sale</a>
+      <a href="contact.html" class="mr-4 mt-4 block border-b-2 border-transparent transition hover:border-white lg:mt-0 lg:inline-block">Contact</a>
+    </div>
+  </div>
+</nav>
+<!-- /partial: nav -->
 
       <header>
         <div class="mx-auto mt-6 max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -310,42 +283,45 @@
         </div>
       </div>
 
-      <div class="container mx-auto mt-6 px-4 sm:px-6 lg:px-8">
-        <footer class="mt-6 rounded-2xl bg-black/30 py-10 px-6 text-center font-Inter">
-          <img
-            src="img/innovativeLogo.svg"
-            alt="Innovative Circuits"
-            loading="lazy"
-            decoding="async"
-            class="mx-auto h-16 w-auto dark:brightness-75"
-          />
-          <p class="mt-6">
-            <span class="font-semibold">Innovative Circuits</span> · Electronics Repair Centre
-          </p>
-          <address class="mt-2 not-italic">
-            #2040 30/31 Side Road West<br />
-            Oro-Medonte, Ontario L0L 2L0
-          </address>
-          <p class="mt-3">
-            <a href="tel:705-791-6634" class="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded">705-791-6634</a>
-            <span class="mx-2 text-white/50">·</span>
-            <a href="mailto:service@innovativecircuits.com" class="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded">service@innovativecircuits.com</a>
-          </p>
-          <p class="mt-6 text-xs text-white/60">© Innovative Circuits · Since 1991</p>
-        </footer>
-      </div>
+      <!-- partial: footer -->
+<div class="container mx-auto mt-6 px-4 sm:px-6 lg:px-8">
+  <footer class="mt-6 rounded-2xl bg-black/30 py-10 px-6 text-center font-Inter">
+    <img
+      src="img/innovativeLogo.svg"
+      alt="Innovative Circuits"
+      loading="lazy"
+      decoding="async"
+      class="mx-auto h-16 w-auto dark:brightness-75"
+    />
+    <p class="mt-6">
+      <span class="font-semibold">Innovative Circuits</span> · Electronics Repair Centre
+    </p>
+    <address class="mt-2 not-italic">
+      #2040 30/31 Side Road West<br />
+      Oro-Medonte, Ontario L0L 2L0
+    </address>
+    <p class="mt-3">
+      <a href="tel:705-791-6634" class="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded">705-791-6634</a>
+      <span class="mx-2 text-white/50">·</span>
+      <a href="mailto:service@innovativecircuits.com" class="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded">service@innovativecircuits.com</a>
+    </p>
+    <p class="mt-6 text-xs text-white/60">© Innovative Circuits · Since 1991</p>
+  </footer>
+</div>
+<!-- /partial: footer -->
     </div>
 
-    <script>
-      function toggleNav() {
-        var nav = document.getElementById("menu");
-        if (nav.classList.contains("hidden")) {
-          nav.classList.remove("hidden");
-        } else {
-          nav.classList.add("hidden");
-        }
-      }
-    </script>
+    <!-- partial: scripts -->
+<script>
+  function toggleNav() {
+    var nav = document.getElementById("menu");
+    var btn = document.querySelector('[aria-controls="menu"]');
+    var isHidden = nav.classList.contains("hidden");
+    nav.classList.toggle("hidden");
+    if (btn) btn.setAttribute("aria-expanded", String(isHidden));
+  }
+</script>
+<!-- /partial: scripts -->
 
     <!-- Netlify Identity: handles invite/recovery links landing on the
          homepage; after login, sends the admin to the CMS. -->

@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build:items": "node scripts/build-items.js",
+    "build:partials": "node scripts/sync-partials.js",
     "build:css": "npx tailwindcss -i ./src/input.css -o output.css --minify",
-    "dev": "node scripts/build-items.js && vite",
-    "build": "node scripts/build-items.js && npx tailwindcss -i ./src/input.css -o output.css --minify"
+    "dev": "node scripts/build-items.js && node scripts/sync-partials.js && vite",
+    "build": "node scripts/build-items.js && node scripts/sync-partials.js && npx tailwindcss -i ./src/input.css -o output.css --minify"
   },
   "keywords": [],
   "author": "",

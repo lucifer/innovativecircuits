@@ -8,23 +8,45 @@ Static marketing site for Innovative Circuits, an electronics repair shop in Bar
 
 ## Commands
 
-- `npm run dev` — generate `data/items.json` from the items collection, then start Vite dev server.
-- `npm run build` — generate `data/items.json`, then compile Tailwind: `src/input.css` → `output.css` (minified). Must be re-run after editing `src/input.css`, `tailwind.config.js`, items, or any HTML class usage you want reflected in the purged CSS.
-- `npm run build:css` — Tailwind only (skip the items manifest step).
+- `npm run dev` — generate `data/items.json`, sync partials into each page, then start Vite dev server.
+- `npm run build` — full chain: items manifest → sync partials → Tailwind compile (`src/input.css` → `output.css`, minified). Must be re-run after editing `src/input.css`, `tailwind.config.js`, items, partials, or any HTML class usage you want reflected in the purged CSS.
 - `npm run build:items` — regenerate `data/items.json` only.
+- `npm run build:partials` — propagate `partials/*.html` into every root HTML page that has the matching marker pair.
+- `npm run build:css` — Tailwind only (skip items + partials).
 - During iterative styling, run Tailwind in watch mode: `npx tailwindcss -i ./src/input.css -o output.css --watch`.
 
 There is no lint, test, or typecheck step.
 
 ## Architecture
 
-- Pages are standalone `.html` files at the repo root: `index.html`, `services.html`, `contact.html`, `forSale.html`. Navigation between them is plain `<a href="...">` — no router or shared template, so header/nav/footer markup is duplicated per page. Edits to nav or shared chrome must be applied to every page.
+- Pages are standalone `.html` files at the repo root: `index.html`, `services.html`, `contact.html`, `forSale.html`. Navigation between them is plain `<a href="...">` — no router or template at runtime. Shared chrome (nav, footer, scripts) is kept in `partials/` and propagated into each page by `scripts/sync-partials.js`. See **Partials workflow** below.
 - `news.html` and `selling.html` are retired stubs (meta-refresh + noindex) kept around so old inbound links 301 cleanly. They're also covered by `_redirects` for server-side 301s on Netlify.
-- Tailwind's `content` glob in `tailwind.config.js` is `["./*.{html,js}", "./index.html"]` — only root-level HTML/JS is scanned. Classes used in files outside the root won't be emitted into `output.css`. Class strings embedded in `<script>` template literals (e.g. the For Sale renderer) ARE picked up because the scanner reads the HTML file as text.
+- Tailwind's `content` glob in `tailwind.config.js` is `["./*.{html,js}", "./index.html", "./partials/*.html"]`. Classes used in files outside those paths won't be emitted into `output.css`. Class strings embedded in `<script>` template literals (e.g. the For Sale renderer) ARE picked up because the scanner reads the HTML file as text.
 - `src/input.css` is the Tailwind entry. It defines a `@layer components` block with the brand button classes (`.btn-primary`, `.btn-ghost`), the `.custom-card`, and the seasonal background system (see Seasonal theming below).
 - `output.css` is generated and checked in. Do not hand-edit it; rebuild via `npm run build`.
 - Static assets (logos, photos, hero background) live in `img/`. Item photos uploaded by Decap go to `img/items/`. Favicons and PWA manifest sit at the root and are wired into the `<head>` of each page.
 - Google Fonts (Outfit, Inter) are imported at the top of `src/input.css` and registered in `tailwind.config.js`. Every page has preconnect tags for `fonts.googleapis.com` and `fonts.gstatic.com` to mitigate the @import being render-blocking.
+
+## Partials workflow
+
+Shared chrome lives in `partials/`:
+
+- `partials/nav.html` — the top nav (logo, mobile toggle, page links).
+- `partials/footer.html` — the centered footer (logo + address + phone + email + copyright).
+- `partials/scripts.html` — the `toggleNav()` mobile-menu script.
+- `partials/head-shared.html`, `partials/jsonld.html` — additional partials that *exist* and can be wired up, but aren't currently referenced by any page (no marker pair). Available for future use.
+
+Each page that consumes a partial has a marker pair in the appropriate spot:
+
+```html
+<!-- partial: nav -->
+…content overwritten on every build…
+<!-- /partial: nav -->
+```
+
+`scripts/sync-partials.js` (run automatically by `npm run dev` and `npm run build`, or manually via `npm run build:partials`) reads every `partials/*.html` and rewrites the content between each matching marker pair in every root HTML file. Pages without a given marker pair are left untouched. **Edits to nav/footer/shared scripts go in `partials/`, not in the page files** — anything written between markers gets overwritten on next sync.
+
+To wire up an additional partial in a page, add the marker pair at the desired location; the next build fills it in. To stop a page from using a partial, just delete its marker pair.
 
 ## Seasonal theming
 

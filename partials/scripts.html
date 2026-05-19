@@ -1,0 +1,9 @@
+<script>
+  function toggleNav() {
+    var nav = document.getElementById("menu");
+    var btn = document.querySelector('[aria-controls="menu"]');
+    var isHidden = nav.classList.contains("hidden");
+    nav.classList.toggle("hidden");
+    if (btn) btn.setAttribute("aria-expanded", String(isHidden));
+  }
+</script>
