@@ -5,7 +5,7 @@
 
 @layer components {
   .custom-card {
-    @apply bg-brand-primary py-4 px-8 shadow-lg rounded-2xl w-full;
+    @apply bg-brand-primary/25 border border-brand-primary py-4 px-8 rounded-2xl w-full;
   }
 
   /* Primary CTA — solid brand cyan, white text, pill shape. */

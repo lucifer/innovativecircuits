@@ -46,6 +46,31 @@
       })();
     </script>
 
+    <!-- partial: analytics -->
+<!--
+  Google Analytics (GA4).
+  TO ACTIVATE: replace the GA_ID placeholder below with the Measurement
+  ID from your Google Analytics property (looks like G-AB12CD34EF).
+  While the placeholder is in place, no analytics request fires.
+  After editing this file, run `npm run build:partials` to fan the
+  change out to every page (or just `npm run build`).
+-->
+<script>
+  (function () {
+    var GA_ID = "G-XXXXXXXXXX";
+    if (GA_ID === "G-XXXXXXXXXX") return;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", GA_ID, { anonymize_ip: true });
+  })();
+</script>
+<!-- /partial: analytics -->
+
     <link rel="stylesheet" href="output.css" />
 
     <script type="application/ld+json">
