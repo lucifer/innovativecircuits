@@ -19,34 +19,30 @@
   }
 
   /* Seasonal background — driven by <html data-season="..."> set pre-paint by
-     the inline script in each page's <head>. CSS-only fallback below uses
-     spring values when no data-season is present (e.g. JS disabled). */
+     the inline script in each page's <head>. Each season has its own photo;
+     the gradient overlay is a light darken-for-legibility pass with a hint
+     of seasonal tint, kept gentle so the photo carries the mood. */
   :root,
   :root[data-season="spring"] {
-    --bg-image: url("img/wideSpringIC.webp");
-    --grad-top: rgba(156, 146, 133, 0.7);
-    --grad-bot: rgba(47, 72, 88, 0.7);
+    --bg-image: url("img/seasonal/spring.webp");
+    --grad-top: rgba(20, 30, 30, 0.35);
+    --grad-bot: rgba(15, 30, 40, 0.6);
   }
   :root[data-season="summer"] {
-    --bg-image: url("img/wideSpringIC.webp");
-    --grad-top: rgba(80, 140, 110, 0.55);
-    --grad-bot: rgba(20, 60, 80, 0.75);
+    --bg-image: url("img/seasonal/summer.webp");
+    --grad-top: rgba(15, 35, 35, 0.3);
+    --grad-bot: rgba(15, 35, 50, 0.55);
   }
   :root[data-season="autumn"] {
-    --bg-image: url("img/wideSpringIC.webp");
-    --grad-top: rgba(180, 100, 50, 0.65);
-    --grad-bot: rgba(70, 40, 30, 0.75);
+    --bg-image: url("img/seasonal/autumn.webp");
+    --grad-top: rgba(30, 20, 15, 0.35);
+    --grad-bot: rgba(25, 20, 15, 0.6);
   }
   :root[data-season="winter"] {
-    --bg-image: url("img/wideSpringIC.webp");
-    --grad-top: rgba(110, 130, 150, 0.55);
-    --grad-bot: rgba(30, 45, 75, 0.78);
+    --bg-image: url("img/seasonal/winter.webp");
+    --grad-top: rgba(20, 30, 45, 0.35);
+    --grad-bot: rgba(15, 25, 45, 0.65);
   }
-
-  /* To unlock per-season photos: drop files at img/seasonal/{spring,summer,autumn,winter}.webp
-     and point each --bg-image at the matching file (1920×1080, ≤150KB WebP).
-     Until then, all four seasons share wideSpringIC.webp and differ only by
-     gradient overlay. */
 
   .seasonal-bg {
     background:

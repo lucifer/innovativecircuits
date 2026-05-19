@@ -2,6 +2,12 @@ backend:
   name: git-gateway
   branch: master
 
+# When the CMS is opened on localhost, it talks to a local proxy
+# (run via `npm run cms:dev`) that reads/writes data/items/*.json
+# directly on disk — no Netlify Identity needed for development.
+# On the live site this flag is ignored.
+local_backend: true
+
 media_folder: "img/items"
 public_folder: "/img/items"
 

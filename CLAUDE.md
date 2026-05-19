@@ -56,7 +56,9 @@ The seasonal-photo background swaps automatically based on the current month. Me
 2. `src/input.css` defines CSS variables (`--bg-image`, `--grad-top`, `--grad-bot`) on `:root[data-season="…"]` blocks, one per season.
 3. The `.seasonal-bg` class on `<body>` composes those into a `linear-gradient(...), var(--bg-image)`.
 
-Right now all four seasons point at `img/wideSpringIC.webp` and differ only by gradient tint. To unlock per-season photos: drop files at `img/seasonal/{spring,summer,autumn,winter}.webp` and update each `:root[data-season="…"]` block in `src/input.css` to point `--bg-image` at its file. Mobile uses `background-attachment: scroll` to avoid iOS Safari jank.
+Each season has its own photo at `img/seasonal/{spring,summer,autumn,winter}.webp`. The gradient overlay is a light darken-for-legibility pass with a hint of seasonal tint — the photo carries the seasonal mood. Mobile uses `background-attachment: scroll` to avoid iOS Safari jank.
+
+To swap a season's photo: replace the corresponding file in `img/seasonal/` (keep the WebP format, ≤200 KB, ~1920×1080). No CSS edit needed.
 
 ## Content management (Decap CMS)
 
@@ -68,7 +70,21 @@ The For Sale page is driven by a folder collection edited through Decap CMS:
 - **Runtime**: `forSale.html` fetches `/data/items.json` and renders cards. Items with `status: "Hidden"` are filtered out client-side; `"Sold"` items show with a badge and dimmed; `"For Sale"` items get an Enquire CTA (mailto with the item title prefilled).
 - **Image uploads**: Decap writes uploaded images to `img/items/`.
 
-### One-time Netlify dashboard setup (required before Decap works)
+### Local CMS testing (no Netlify needed)
+
+`admin/config.yml` has `local_backend: true`, which Decap honours only when served on localhost. To run the CMS against your working tree:
+
+```bash
+# Terminal 1
+npm run dev          # Vite serves the site + admin/
+
+# Terminal 2
+npm run cms:dev      # decap-server proxies CMS file ops to disk
+```
+
+Open http://localhost:5173/admin/ — the CMS opens without auth, reads/writes `data/items/*.json` directly. Image uploads land in `img/items/`. Save in the CMS, then refresh `/forSale.html` to see the rendered card. This is the fastest way to validate the full edit-to-render loop before hitting Netlify.
+
+### One-time Netlify dashboard setup (required for production CMS)
 
 These steps happen in the Netlify dashboard, not in code:
 
@@ -77,7 +93,7 @@ These steps happen in the Netlify dashboard, not in code:
 3. **Identity → Services → Git Gateway** → "Enable Git Gateway"
 4. **Identity → Invite users** → invite Ron's email
 
-Ron then receives an email, clicks the link, lands on the homepage where the Identity widget intercepts the invite token, sets a password, and is redirected to `/admin/`.
+Ron then receives an email, clicks the link, lands on the homepage where the Identity widget intercepts the invite token, sets a password, and is redirected to `/admin/`. From there, every save is a git commit to `master`, which triggers a Netlify rebuild.
 
 ### Tailwind safelist note
 

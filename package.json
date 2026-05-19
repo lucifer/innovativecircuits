@@ -8,6 +8,7 @@
     "build:partials": "node scripts/sync-partials.js",
     "build:css": "npx tailwindcss -i ./src/input.css -o output.css --minify",
     "dev": "node scripts/build-items.js && node scripts/sync-partials.js && vite",
+    "cms:dev": "npx decap-server",
     "build": "node scripts/build-items.js && node scripts/sync-partials.js && npx tailwindcss -i ./src/input.css -o output.css --minify"
   },
   "keywords": [],
@@ -16,6 +17,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
     "autoprefixer": "^10.4.14",
+    "decap-server": "^3.1.4",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.4.3",
     "vite": "^4.3.5"
