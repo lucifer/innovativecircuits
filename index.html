@@ -195,11 +195,72 @@
                 </div>
               </div>
               <div class="md:w-1/2 mt-8 md:mt-0">
-                <img
-                  class="mx-auto object-contain dark:brightness-75 rounded-lg shadow-lg"
-                  src="img/SpringIC.jpg"
-                  alt="Soldering a chip to a circuit board"
-                />
+                <div
+                  id="hero-rotator"
+                  class="relative overflow-hidden rounded-lg shadow-lg bg-white aspect-[4/3]"
+                  aria-roledescription="carousel"
+                  aria-label="Innovative Circuits and partners"
+                >
+                  <figure class="absolute inset-0 transition-opacity duration-700 opacity-100" data-slide="0">
+                    <img
+                      src="img/circuitSolder1.webp"
+                      alt="Component-level soldering at our Oro-Medonte bench"
+                      class="h-full w-full object-cover dark:brightness-75"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </figure>
+
+                  <figure class="absolute inset-0 transition-opacity duration-700 opacity-0" data-slide="1" aria-hidden="true">
+                    <img
+                      src="img/RM_Italy.webp"
+                      alt="RM Italy — service partner"
+                      class="h-full w-full object-contain p-6"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3 pb-8 text-center font-Inter text-sm text-white">
+                      Now partnered with RM Italy
+                    </figcaption>
+                  </figure>
+
+                  <figure class="absolute inset-0 transition-opacity duration-700 opacity-0" data-slide="2" aria-hidden="true">
+                    <img
+                      src="img/ACOM.webp"
+                      alt="ACOM — service partner"
+                      class="h-full w-full object-contain p-6"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3 pb-8 text-center font-Inter text-sm text-white">
+                      Now partnered with ACOM
+                    </figcaption>
+                  </figure>
+
+                  <figure class="absolute inset-0 transition-opacity duration-700 opacity-0" data-slide="3" aria-hidden="true">
+                    <img
+                      src="img/DX_Engineering.webp"
+                      alt="DX Engineering — service partner"
+                      class="h-full w-full object-contain p-6"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3 pb-8 text-center font-Inter text-sm text-white">
+                      Now partnered with DX Engineering
+                    </figcaption>
+                  </figure>
+
+                  <div
+                    class="absolute inset-x-0 bottom-2 z-10 flex justify-center gap-2"
+                    role="tablist"
+                    aria-label="Choose slide"
+                  >
+                    <button type="button" role="tab" aria-selected="true"  aria-controls="hero-rotator" aria-label="Slide 1: Component-level soldering" class="h-2.5 w-2.5 rounded-full bg-white ring-1 ring-black/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"></button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="hero-rotator" aria-label="Slide 2: RM Italy"                  class="h-2.5 w-2.5 rounded-full bg-white/40 ring-1 ring-black/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"></button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="hero-rotator" aria-label="Slide 3: ACOM"                      class="h-2.5 w-2.5 rounded-full bg-white/40 ring-1 ring-black/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"></button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="hero-rotator" aria-label="Slide 4: DX Engineering"            class="h-2.5 w-2.5 rounded-full bg-white/40 ring-1 ring-black/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"></button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -335,6 +396,69 @@
 </div>
 <!-- /partial: footer -->
     </div>
+
+    <script>
+      (function () {
+        var root = document.getElementById("hero-rotator");
+        if (!root) return;
+        var slides = root.querySelectorAll("[data-slide]");
+        var dots = root.querySelectorAll('[role="tab"]');
+        if (!slides.length || slides.length !== dots.length) return;
+
+        var active = 0;
+        var timer = null;
+        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var INTERVAL_MS = 5000;
+
+        function show(next) {
+          slides[active].classList.remove("opacity-100");
+          slides[active].classList.add("opacity-0");
+          slides[active].setAttribute("aria-hidden", "true");
+          dots[active].classList.remove("bg-white");
+          dots[active].classList.add("bg-white/40");
+          dots[active].setAttribute("aria-selected", "false");
+
+          active = next;
+
+          slides[active].classList.remove("opacity-0");
+          slides[active].classList.add("opacity-100");
+          slides[active].setAttribute("aria-hidden", "false");
+          dots[active].classList.remove("bg-white/40");
+          dots[active].classList.add("bg-white");
+          dots[active].setAttribute("aria-selected", "true");
+        }
+
+        function start() {
+          if (reduceMotion || timer) return;
+          timer = setInterval(function () {
+            show((active + 1) % slides.length);
+          }, INTERVAL_MS);
+        }
+
+        function stop() {
+          if (timer) {
+            clearInterval(timer);
+            timer = null;
+          }
+        }
+
+        dots.forEach(function (dot, i) {
+          dot.addEventListener("click", function () {
+            if (i === active) return;
+            show(i);
+            stop();
+            start();
+          });
+        });
+
+        root.addEventListener("mouseenter", stop);
+        root.addEventListener("mouseleave", start);
+        root.addEventListener("focusin", stop);
+        root.addEventListener("focusout", start);
+
+        start();
+      })();
+    </script>
 
     <!-- partial: scripts -->
 <script>
