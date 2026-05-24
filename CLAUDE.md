@@ -26,6 +26,8 @@ There is no lint, test, or typecheck step.
 - `output.css` is generated and checked in. Do not hand-edit it; rebuild via `npm run build`.
 - Static assets (logos, photos, hero background) live in `img/`. Item photos uploaded by Decap go to `img/items/`. Favicons and PWA manifest sit at the root and are wired into the `<head>` of each page.
 - Google Fonts (Outfit, Inter) are imported at the top of `src/input.css` and registered in `tailwind.config.js`. Every page has preconnect tags for `fonts.googleapis.com` and `fonts.gstatic.com` to mitigate the @import being render-blocking.
+- **No dark mode.** The seasonal-photo background *is* the design; Tailwind `dark:` variants have been intentionally stripped because they conflicted with the seasonal palette. Don't reintroduce `dark:bg-*`, `dark:text-*`, or similar without a deliberate dark-variant design pass.
+- `robots.txt` and `sitemap.xml` sit at the repo root. The sitemap is hand-maintained — if you add a new top-level page, add a `<url>` entry there too.
 
 ## Partials workflow
 
@@ -102,7 +104,21 @@ Ron then receives an email, clicks the link, lands on the homepage where the Ide
 
 The For Sale renderer uses some classes only inside JS template literals. A hidden `<template>` block on `forsale.html` lists them so the scanner picks them up. If you add new dynamic classes to the renderer, add them to that template block or they'll be silently purged from `output.css`.
 
+## Accessibility & SEO conventions
+
+Every primary page (`index.html`, `services.html`, `contact.html`, `forsale.html`) follows the same structural contract — match it when adding a new page:
+
+1. **`<!DOCTYPE html>` on line 1.** Without it, browsers fall into quirks mode and box-sizing breaks silently.
+2. **Exactly one `<h1>` per page**, describing the page topic (not the brand tagline). Subsequent headings descend `h2` → `h3` in order; don't skip levels.
+3. **Skip-to-content link as the first child of `<body>`**, before the nav partial:
+   ```html
+   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded focus:font-semibold focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-400">Skip to content</a>
+   ```
+4. **`<main id="main" tabindex="-1">`** wraps the page content (everything between the nav partial close and the footer partial open). The `tabindex="-1"` lets the skip link focus the landmark on jump.
+5. **JSON-LD `ElectronicsStore` block lives only on `index.html`** — that's the canonical business URL. Duplicating it on other pages confuses search-engine entity binding. Page-specific schema types (`ContactPage`, `ItemList`) can be added per-page later if useful.
+6. **Image `<img>` tags carry `width` and `height` attributes** matching the source's natural pixel dimensions. Reserves space pre-paint, prevents CLS. The For Sale renderer dynamically injects item images without dimensions — known gap; revisit if the CMS gains a way to record dimensions.
+
 ## Notes
 
-- `*:Zone.Identifier` files are Windows download-marker artifacts; ignore them, don't commit new ones.
+- `*:Zone.Identifier` files are Windows download-marker artifacts. They're gitignored (`*:Zone.Identifier` rule in `.gitignore`), so they won't sneak in.
 - `.gitpod.yml` boots the project with `npm install && npm run build` then `npm run dev` — mirror that locally if styles look stale.

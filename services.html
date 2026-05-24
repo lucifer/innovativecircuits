@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,56 +72,10 @@
 <!-- /partial: analytics -->
 
     <link rel="stylesheet" href="output.css" />
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ElectronicsStore",
-      "name": "Innovative Circuits",
-      "alternateName": "Innovative Circuits Electronics Repair Centre",
-      "image": "https://innovativecircuits.com/img/innovativeLogo.svg",
-      "logo": "https://innovativecircuits.com/img/innovativeLogo.svg",
-      "url": "https://innovativecircuits.com/",
-      "telephone": "+1-705-791-6634",
-      "email": "service@innovativecircuits.com",
-      "priceRange": "$$",
-      "foundingDate": "1991",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "#2040 30/31 Side Road West",
-        "addressLocality": "Oro-Medonte",
-        "addressRegion": "ON",
-        "postalCode": "L0L 2L0",
-        "addressCountry": "CA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 44.5854,
-        "longitude": -79.5556
-      },
-      "areaServed": [
-        {"@type": "City", "name": "Barrie"},
-        {"@type": "AdministrativeArea", "name": "Simcoe County"},
-        {"@type": "AdministrativeArea", "name": "Ontario"}
-      ],
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday","Sunday"],
-          "description": "By appointment only"
-        }
-      ]
-    }
-    </script>
   </head>
 
-  <body class="seasonal-bg dark:bg-black text-[#FDF6E4] dark:text-gray-300">
+  <body class="seasonal-bg text-white">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded focus:font-semibold focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-400">Skip to content</a>
     <div class="container mx-auto mt-6 px-4 sm:px-6 lg:px-8">
       <!-- partial: nav -->
 <nav class="flex flex-wrap items-center justify-between p-6">
@@ -156,9 +110,10 @@
 </nav>
 <!-- /partial: nav -->
 
+      <main id="main" tabindex="-1">
       <header>
         <div class="mx-auto mt-6 max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div class="bore rounded-lg bg-white/20 backdrop-blur-lg border border-white">
+          <div class="rounded-lg bg-white/20 backdrop-blur-lg border border-white">
             <div class="p-8 text-center md:flex md:text-left">
               <div class="md:w-1/2">
                 <h1 class="font-Outfit text-3xl md:text-4xl lg:text-5xl">We fix what the other guys can’t.</h1>
@@ -170,7 +125,7 @@
                 </div>
               </div>
               <div class="md:w-1/2">
-                <img class="mx-auto object-contain dark:brightness-75 rounded-lg shadow-lg" src="img/IMG_4593.jpg" alt="Workbench at Innovative Circuits with circuit boards under repair" />
+                <img class="mx-auto object-contain rounded-lg shadow-lg" src="img/IMG_4593.jpg" alt="Workbench at Innovative Circuits with circuit boards under repair" width="2016" height="1512" loading="eager" decoding="async" />
               </div>
             </div>
           </div>
@@ -214,15 +169,20 @@
           </article>
         </div>
 
-        <!-- Things we don't do -->
-        <div class="mt-8 rounded-2xl border border-white/30 p-6 font-Inter">
-          <h3 class="font-Outfit text-xl font-semibold">Things we don&rsquo;t do</h3>
-          <ul class="mt-3 space-y-2">
+      </div>
+
+      <section class="container mx-auto mt-10 max-w-6xl px-4 sm:px-6 lg:px-8" aria-labelledby="dont-do-heading">
+        <h2 id="dont-do-heading" class="font-Outfit text-2xl md:text-3xl font-semibold flex items-center gap-3">
+          <span aria-hidden="true" class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-amber-500/20 text-amber-300 ring-1 ring-amber-400/50 font-bold">!</span>
+          Things we don&rsquo;t do
+        </h2>
+        <div class="mt-4 rounded-2xl bg-amber-500/10 border border-amber-400/40 p-6 font-Inter shadow-lg">
+          <ul class="space-y-3 list-disc list-outside pl-5 marker:text-amber-300/70">
             <li>Amplifier repairs are <span class="font-semibold">not warrantied</span>.</li>
             <li>We do <span class="font-semibold">not repair tube amplifiers</span>.</li>
           </ul>
         </div>
-      </div>
+      </section>
 
       <div class="mt-6 h-auto w-full rounded-lg bg-cyan-800/30 border border-cyan-300 p-6">
         <p class="text-balance font-Inter text-lg font-bold md:text-2xl">
@@ -239,7 +199,8 @@
       </div>
 
 
-      <!-- Footer -->
+      </main>
+
       <!-- partial: footer -->
 <div class="container mx-auto mt-6 px-4 sm:px-6 lg:px-8">
   <footer class="mt-6 rounded-2xl bg-black/30 py-10 px-6 text-center font-Inter">
@@ -248,7 +209,7 @@
       alt="Innovative Circuits"
       loading="lazy"
       decoding="async"
-      class="mx-auto h-16 w-auto dark:brightness-75"
+      class="mx-auto h-16 w-auto"
     />
     <p class="mt-6">
       <span class="font-semibold">Innovative Circuits</span> · Electronics Repair Centre

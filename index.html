@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -121,7 +121,8 @@
     </script>
   </head>
 
-  <body class="seasonal-bg text-white dark:bg-black dark:text-white">
+  <body class="seasonal-bg text-white">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded focus:font-semibold focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-400">Skip to content</a>
     <div class="container mx-auto mt-6 px-4 sm:px-6 lg:px-8">
       <!-- partial: nav -->
 <nav class="flex flex-wrap items-center justify-between p-6">
@@ -156,6 +157,7 @@
 </nav>
 <!-- /partial: nav -->
 
+      <main id="main" tabindex="-1">
       <header>
         <div class="mx-auto mt-6 max-w-6xl px-4 sm:px-6 lg:px-8">
           <div
@@ -205,9 +207,12 @@
                     <img
                       src="img/circuitSolder1.webp"
                       alt="Component-level soldering at our Oro-Medonte bench"
-                      class="h-full w-full object-cover dark:brightness-75"
+                      class="h-full w-full object-cover"
+                      width="435"
+                      height="313"
                       loading="eager"
                       decoding="async"
+                      fetchpriority="high"
                     />
                   </figure>
 
@@ -216,6 +221,8 @@
                       src="img/RM_Italy.webp"
                       alt="RM Italy — service partner"
                       class="h-full w-full object-contain p-6"
+                      width="1600"
+                      height="669"
                       loading="lazy"
                       decoding="async"
                     />
@@ -229,6 +236,8 @@
                       src="img/ACOM.webp"
                       alt="ACOM — service partner"
                       class="h-full w-full object-contain p-6"
+                      width="1008"
+                      height="1070"
                       loading="lazy"
                       decoding="async"
                     />
@@ -242,6 +251,8 @@
                       src="img/DX_Engineering.webp"
                       alt="DX Engineering — service partner"
                       class="h-full w-full object-contain p-6"
+                      width="1361"
+                      height="768"
                       loading="lazy"
                       decoding="async"
                     />
@@ -369,6 +380,8 @@
         </div>
       </div>
 
+      </main>
+
       <!-- partial: footer -->
 <div class="container mx-auto mt-6 px-4 sm:px-6 lg:px-8">
   <footer class="mt-6 rounded-2xl bg-black/30 py-10 px-6 text-center font-Inter">
@@ -377,7 +390,7 @@
       alt="Innovative Circuits"
       loading="lazy"
       decoding="async"
-      class="mx-auto h-16 w-auto dark:brightness-75"
+      class="mx-auto h-16 w-auto"
     />
     <p class="mt-6">
       <span class="font-semibold">Innovative Circuits</span> · Electronics Repair Centre

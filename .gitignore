@@ -9,3 +9,6 @@ data/items.json
 # macOS noise
 .DS_Store
 **/.DS_Store
+
+# Windows download-marker artifacts
+*:Zone.Identifier

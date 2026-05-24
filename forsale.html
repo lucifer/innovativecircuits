@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,56 +72,10 @@
 <!-- /partial: analytics -->
 
     <link rel="stylesheet" href="output.css" />
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ElectronicsStore",
-      "name": "Innovative Circuits",
-      "alternateName": "Innovative Circuits Electronics Repair Centre",
-      "image": "https://innovativecircuits.com/img/innovativeLogo.svg",
-      "logo": "https://innovativecircuits.com/img/innovativeLogo.svg",
-      "url": "https://innovativecircuits.com/",
-      "telephone": "+1-705-791-6634",
-      "email": "service@innovativecircuits.com",
-      "priceRange": "$$",
-      "foundingDate": "1991",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "#2040 30/31 Side Road West",
-        "addressLocality": "Oro-Medonte",
-        "addressRegion": "ON",
-        "postalCode": "L0L 2L0",
-        "addressCountry": "CA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 44.5854,
-        "longitude": -79.5556
-      },
-      "areaServed": [
-        {"@type": "City", "name": "Barrie"},
-        {"@type": "AdministrativeArea", "name": "Simcoe County"},
-        {"@type": "AdministrativeArea", "name": "Ontario"}
-      ],
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday","Sunday"],
-          "description": "By appointment only"
-        }
-      ]
-    }
-    </script>
   </head>
 
-  <body class="seasonal-bg text-white dark:bg-black dark:text-white">
+  <body class="seasonal-bg text-white">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded focus:font-semibold focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-400">Skip to content</a>
     <div class="">
       <!-- partial: nav -->
 <nav class="flex flex-wrap items-center justify-between p-6">
@@ -156,6 +110,7 @@
 </nav>
 <!-- /partial: nav -->
 
+      <main id="main" tabindex="-1">
       <header class="mx-auto mt-6 max-w-6xl px-4 sm:px-6 lg:px-8">
         <h1 class="font-Outfit text-3xl md:text-4xl lg:text-5xl">Surplus electronics for sale</h1>
         <p class="mt-2 font-Inter">Components, test equipment, and gear we've come across over the years. Updated periodically — message us to confirm availability.</p>
@@ -290,6 +245,8 @@
         </div>
       </div>
 
+      </main>
+
       <!-- partial: footer -->
 <div class="container mx-auto mt-6 px-4 sm:px-6 lg:px-8">
   <footer class="mt-6 rounded-2xl bg-black/30 py-10 px-6 text-center font-Inter">
@@ -298,7 +255,7 @@
       alt="Innovative Circuits"
       loading="lazy"
       decoding="async"
-      class="mx-auto h-16 w-auto dark:brightness-75"
+      class="mx-auto h-16 w-auto"
     />
     <p class="mt-6">
       <span class="font-semibold">Innovative Circuits</span> · Electronics Repair Centre
