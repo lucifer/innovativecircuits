@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <link rel="preload" as="image" href="img/circuitSolder1.webp" type="image/webp" fetchpriority="high" />
+
     <title>Innovative Circuits — Electronics Repair in Barrie, Ontario | Since 1991</title>
     <meta name="description" content="Component-level electronics repair in Oro-Medonte, serving Barrie since 1991. Industrial controllers, PLCs, amateur radio, hot tub boards, welders, and video surveillance." />
     <link rel="canonical" href="https://innovativecircuits.com/" />
@@ -76,52 +78,54 @@
 
     <link rel="stylesheet" href="output.css" />
 
-    <script type="application/ld+json">
+    <!-- partial: jsonld -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ElectronicsStore",
+  "name": "Innovative Circuits",
+  "alternateName": "Innovative Circuits Electronics Repair Centre",
+  "image": "https://innovativecircuits.com/img/innovativeLogo.svg",
+  "logo": "https://innovativecircuits.com/img/innovativeLogo.svg",
+  "url": "https://innovativecircuits.com/",
+  "telephone": "+1-705-791-6634",
+  "email": "service@innovativecircuits.com",
+  "priceRange": "$$",
+  "foundingDate": "1991",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "#2040 30/31 Side Road West",
+    "addressLocality": "Oro-Medonte",
+    "addressRegion": "ON",
+    "postalCode": "L0L 2L0",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 44.5854,
+    "longitude": -79.5556
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Barrie"},
+    {"@type": "AdministrativeArea", "name": "Simcoe County"},
+    {"@type": "AdministrativeArea", "name": "Ontario"}
+  ],
+  "openingHoursSpecification": [
     {
-      "@context": "https://schema.org",
-      "@type": "ElectronicsStore",
-      "name": "Innovative Circuits",
-      "alternateName": "Innovative Circuits Electronics Repair Centre",
-      "image": "https://innovativecircuits.com/img/innovativeLogo.svg",
-      "logo": "https://innovativecircuits.com/img/innovativeLogo.svg",
-      "url": "https://innovativecircuits.com/",
-      "telephone": "+1-705-791-6634",
-      "email": "service@innovativecircuits.com",
-      "priceRange": "$$",
-      "foundingDate": "1991",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "#2040 30/31 Side Road West",
-        "addressLocality": "Oro-Medonte",
-        "addressRegion": "ON",
-        "postalCode": "L0L 2L0",
-        "addressCountry": "CA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 44.5854,
-        "longitude": -79.5556
-      },
-      "areaServed": [
-        {"@type": "City", "name": "Barrie"},
-        {"@type": "AdministrativeArea", "name": "Simcoe County"},
-        {"@type": "AdministrativeArea", "name": "Ontario"}
-      ],
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday","Sunday"],
-          "description": "By appointment only"
-        }
-      ]
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday","Sunday"],
+      "description": "By appointment only"
     }
-    </script>
+  ]
+}
+</script>
+<!-- /partial: jsonld -->
   </head>
 
   <body class="seasonal-bg text-white">

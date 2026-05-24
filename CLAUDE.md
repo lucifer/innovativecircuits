@@ -36,7 +36,8 @@ Shared chrome lives in `partials/`:
 - `partials/nav.html` — the top nav (logo, mobile toggle, page links).
 - `partials/footer.html` — the centered footer (logo + address + phone + email + copyright).
 - `partials/scripts.html` — the `toggleNav()` mobile-menu script.
-- `partials/head-shared.html`, `partials/jsonld.html` — additional partials that *exist* and can be wired up, but aren't currently referenced by any page (no marker pair). Available for future use.
+- `partials/analytics.html` — the GA4 loader (gated on a real Measurement ID).
+- `partials/jsonld.html` — the `ElectronicsStore` schema block. Wired into `index.html` only (other pages intentionally don't carry duplicate business markup).
 
 Each page that consumes a partial has a marker pair in the appropriate spot:
 
