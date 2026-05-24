@@ -50,3 +50,8 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "interest-cohort=()"
+    # HSTS: 2 years + includeSubDomains. No "preload" — that's a one-way
+    # commitment requiring submission to hstspreload.org and is hard to
+    # roll back. Add it later if/when we're confident no subdomain ever
+    # needs to be served over plain HTTP.
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains"
